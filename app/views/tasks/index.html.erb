@@ -19,6 +19,7 @@
          <div class="card blue-grey darken-1">
             <div class="card-content white-text">
          <%= task.content %>
+          <%= link_to 'Show', task %>
           <%= link_to 'Edit', edit_task_path(task) %>
           <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%= link_to 'Mark as WIP', change_task_path(task, state: 'wip'), method: :put %>
@@ -32,6 +33,7 @@
          <div class="card blue-grey darken-1">
             <div class="card-content white-text">
           <%= task.content %>
+          <%= link_to 'Show', task %>
           <%= link_to 'Edit', edit_task_path(task) %>
           <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%= link_to 'Mark as Open', change_task_path(task, state: 'open'), method: :put %>
@@ -45,7 +47,8 @@
           <% @closed.each do |task| %>
          <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-         <%= task.content %>
+          <%= task.content %>
+          <%= link_to 'Show', task %>
           <%= link_to 'Edit', edit_task_path(task) %>
           <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%= link_to 'Mark as WIP', change_task_path(task, state: 'wip'), method: :put %>
@@ -54,8 +57,6 @@
           <% end %>
           
     </div>
-
-
   <br>
   </div>
 
@@ -67,16 +68,3 @@
   <%= will_paginate @tasks, :container => false %>
 </div>
 
- <!-- Modal Trigger -->
-  <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-    </div>
-  </div>
