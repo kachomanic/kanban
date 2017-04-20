@@ -1,18 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<h4>Detalles de la tarea:</h4>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @task.content %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+	<p>
+	  <strong>Content:</strong>
+	  <%= @task.content %>
+	</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @task.description %>
+	</p>
 
-<p>
-  <strong>Fecha creacion:</strong>
-  <%= @task.created_at %>
-</p>
+	<p>
+	  <strong>Fecha creacion:</strong>
+	  <%= @task.created_at %>
+	</p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+	<%= time_ago_in_words(@task.created_at) %>
+	<br>
+	<%= @task.created_at.strftime("%B, %d, %Y") %>
+
+	<%= link_to 'Edit', edit_task_path(@task) %> |
+	<%= link_to 'Back', tasks_path %>
+</div>

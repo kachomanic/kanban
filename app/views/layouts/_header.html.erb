@@ -1,8 +1,9 @@
-<nav>  
+<nav class="blue lighten-1">  
   <div class="nav-wrapper"> 
-    <%= link_to 'Kanban', root_path, class: "brand-logo" %> <ul id="nav-mobile" class="right"> 
-
+    <%= link_to 'Control de funciones', root_path, class: "brand-logo" %> <ul id="nav-mobile" class="right"> 
+    
     <% if current_user %>
+      <li><%= link_to 'Tareas', tasks_path %></li>
       <li><%= link_to 'Edit', edit_user_registration_path %></li>
       <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete  %></li> 
 
@@ -11,4 +12,4 @@
     <% end %> 
    </ul> 
   </div> 
-</nav> 
+</nav>
