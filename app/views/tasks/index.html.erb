@@ -37,7 +37,7 @@
           <%= link_to 'Mark as Open', change_task_path(task, state: 'open'), method: :put %>
           <%= link_to 'Terminada', change_task_path(task, state: 'closed'), method: :put %>
          </div>
-         <div class="tago"><%= time_ago_in_words(task.created_at) %></div>
+         <div class="tago"><%= time_ago_in_words(task.updated_at) %></div>
          </div>
           <% end %>
     </div>
@@ -52,7 +52,7 @@
           <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%= link_to 'Mark as WIP', change_task_path(task, state: 'wip'), method: :put %>
          </div>
-         <div class="tago"><%= time_ago_in_words(task.created_at) %></div>
+         <div class="tago"><%= time_ago_in_words(task.updated_at) %></div>
          </div>
           <% end %>
           
