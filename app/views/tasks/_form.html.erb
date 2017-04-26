@@ -9,6 +9,15 @@
     <%= f.input :description %>
   </div>
 
+<br>
+
+  <div class="control-group">
+        <%= f.label :category_id, class: 'control-group' %>
+  
+        <%= f.collection_select :category_id, Category.all, :id, :categoria, { prompt: "Choose a category" }, class: "browser-default" %>
+  </div>
+
+
   <br>
   <div class="form-actions">
     <%= f.button :submit %>

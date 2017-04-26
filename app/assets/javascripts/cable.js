@@ -11,3 +11,7 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+$(document).ready(function() {
+    $('select').material_select();
+});
